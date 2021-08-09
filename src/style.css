@@ -18,6 +18,8 @@ GLOBAL VARIABLES
 
     --transition: all 0.3s;
     --max-width: 1440px;
+    --gen-pad-mobile: 0 min(5vw, 25px);
+    --gen-pad-desktop: 0;
 }
 *,
 *::before,
@@ -34,7 +36,7 @@ body{
 a{
     text-decoration: none;
 }
-h1 {
+h1, h2 {
     font-family: var(--ff-secondary);
     font-size: clamp(1.9rem, 1.9rem + 1vw, 2.3rem);
     font-weight: 300;
@@ -48,13 +50,10 @@ h1 {
 .main-header{
     height: 100vh;
     background: url("./images/mobile/image-hero.jpg") center /cover no-repeat;
-    filter: saturate(150%); /*that's what I see in the design*/
 }
 .main-nav{
     padding: 2rem 1.5rem;
     width: 100%;
-}
-.nav-content {
 }
 .nav-header{
     display: flex;
@@ -72,9 +71,9 @@ h1 {
 .nav-toggle img:nth-child(2){
     display: none;
 }
-.nav-toggle:hover{
+/* .nav-toggle:hover{
     cursor: pointer;
-}
+} */
 .nav-header.show-links{
     position: fixed;
     width: 85vw;
@@ -130,6 +129,94 @@ h1 {
 }
 .banner-text-wrapper span {
     display: block;
+}
+.about{
+    margin-top: 4rem;
+    padding: var(--gen-pad-mobile);
+}
+.about-img{
+    background: url("./images/mobile/image-interactive.jpg") center /cover no-repeat;
+    width: 100%;
+    height: 200px; /* todo: make dynamic */
+}
+.about .text-content h2,
+.creations h2 {
+    margin-top: 2rem;
+    color: var(--black);
+    font-size: clamp(1.5rem, 1.4rem + 1vw, 1.7rem);
+    text-align: center;
+}
+.about .text-content p {
+    margin-top: 1rem;
+    font-size: .8125rem;
+    color: var(--very-dark-gray);
+    max-width: 40ch;
+    text-align: center;
+    padding: 0 1rem;
+}
+.creations{
+    margin-top: 4.5rem;
+    padding: var(--gen-pad-mobile);
+}
+.images-container{
+    margin-top: 1.5rem;
+}
+.images-container div {
+    margin: 1rem 0;
+}
+.images-container div:first-child{
+    background: url("./images/mobile/image-deep-earth.jpg") center /cover no-repeat;
+}
+.images-container div:nth-child(2){
+    background: url("./images/mobile/image-night-arcade.jpg") center /cover no-repeat;
+}
+.images-container div:nth-child(3){
+    background: url("./images/mobile/image-soccer-team.jpg") center /cover no-repeat;
+}
+.images-container div:nth-child(4){
+    background: url("./images/mobile/image-grid.jpg") center /cover no-repeat;
+}
+.images-container div:nth-child(5){
+    background: url("./images/mobile/image-from-above.jpg") center /cover no-repeat;
+}
+.images-container div:nth-child(6){
+    background: url("./images/mobile/image-pocket-borealis.jpg") center /cover no-repeat;
+}
+.images-container div:nth-child(7){
+    background: url("./images/mobile/image-curiosity.jpg") center /cover no-repeat;
+}
+.images-container div:last-child{
+    background: url("./images/mobile/image-fisheye.jpg") center /cover no-repeat;
+}
+.images-container span{
+    display: block;
+    font-size: 1rem;
+    font-family: var(--ff-secondary);
+    font-weight: 300;
+    text-transform: uppercase;
+    max-width: 8ch;
+    color: white;
+    padding: 1.5em 0 1em 1em;
+}
+.images-container span:nth-child(5){
+    max-width: 9ch;
+}
+.creations button {
+    display: block;
+    margin: 0 auto;
+    font-size: clamp(.8rem, .7rem + .3vw, .95rem);
+    font-family: var(--ff-primary);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: .4em 2.5em;
+    border: 1px solid var(--black);
+    background: none;
+    transition: var(--transition);
+}
+.creations button:hover{
+    /* cursor: pointer; */
+    color: var(--white);
+    background: var(--black);
 }
 .attribution {
     font-size: 11px;
