@@ -163,47 +163,51 @@ h1, h2 {
 }
 .images-container div {
     margin: 1rem 0;
+    height: 100px;
+    position: relative;
 }
 .images-container div:first-child{
-    background: url("./images/mobile/image-deep-earth.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-deep-earth.jpg") center /cover no-repeat;
 }
 .images-container div:nth-child(2){
-    background: url("./images/mobile/image-night-arcade.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-night-arcade.jpg") center /cover no-repeat;
 }
 .images-container div:nth-child(3){
-    background: url("./images/mobile/image-soccer-team.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-soccer-team.jpg") center /cover no-repeat;
 }
 .images-container div:nth-child(4){
-    background: url("./images/mobile/image-grid.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-grid.jpg") center /cover no-repeat;
 }
 .images-container div:nth-child(5){
-    background: url("./images/mobile/image-from-above.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-from-above.jpg") center /cover no-repeat;
 }
 .images-container div:nth-child(6){
-    background: url("./images/mobile/image-pocket-borealis.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-pocket-borealis.jpg") center /cover no-repeat;
 }
 .images-container div:nth-child(7){
-    background: url("./images/mobile/image-curiosity.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-curiosity.jpg") center /cover no-repeat;
 }
 .images-container div:last-child{
-    background: url("./images/mobile/image-fisheye.jpg") center /cover no-repeat;
+    background: linear-gradient(to right, hsla(0,0%,0%,.7), hsla(0,0%,0%,0)), url("./images/mobile/image-fisheye.jpg") center /cover no-repeat;
 }
 .images-container span{
     display: block;
-    font-size: 1rem;
+    position: absolute;
+    left: 6%; /*todo: slap a max left and bottom */
+    bottom: 11%;
+    font-size: clamp(1rem, 1rem + 1vw, 1.3rem);
     font-family: var(--ff-secondary);
     font-weight: 300;
     text-transform: uppercase;
-    max-width: 8ch;
+    max-width: 7ch;
     color: white;
-    padding: 1.5em 0 1em 1em;
 }
-.images-container span:nth-child(5){
+.images-container :is(div:nth-child(3), div:nth-child(5))  span{
     max-width: 9ch;
 }
 .creations button {
     display: block;
-    margin: 0 auto;
+    margin: 1.6rem auto 0 auto;
     font-size: clamp(.8rem, .7rem + .3vw, .95rem);
     font-family: var(--ff-primary);
     text-transform: uppercase;
