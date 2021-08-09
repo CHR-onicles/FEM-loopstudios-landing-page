@@ -85,17 +85,18 @@ h1, h2 {
     display: none;
 }
 .nav-links-container{
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 0;
+    opacity: 0;
     background: var(--black);
     transition: var(--transition);
 }
 .nav-links-container.show-links{
-    display: block;
+    height: 100vh;
+    opacity: 1;
 }
 .nav-links{
     margin-top: 50%;

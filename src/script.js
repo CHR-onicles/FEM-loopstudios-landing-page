@@ -9,4 +9,4 @@ nav_toggle.addEventListener("click", () => {
     links_container.classList.toggle("show-links");
     nav_toggle.classList.toggle("show-links");
     window.scrollTo(0, 0); // to make menu fully cover screen
-})
+});
