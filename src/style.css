@@ -218,15 +218,60 @@ h1, h2 {
     background: none;
     transition: var(--transition);
 }
+footer{
+    margin-top: 4rem;
+    background: var(--black);
+    /* height: 40vh; */
+}
+
+.footer-logo{
+    display: block;
+    padding-top: 3rem;
+    width: 40%;
+    margin: 0 auto;
+}
 .creations button:hover{
     /* cursor: pointer; */
     color: var(--white);
     background: var(--black);
 }
+.f-nav-links li {
+    padding: .5rem 0;
+}
+.f-nav-links li:first-child{
+    margin-top: 1rem;
+}
+.f-nav-links li:last-child{
+    margin-bottom: .5rem;
+}
+.f-nav-links li a{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+    font-size: .8rem;
+}
+.social-media-icons{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 1.5rem auto 0 auto;
+}
+.social-media-icons img{
+    width: 18px;
+}
+footer p{
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--dark-Gray);
+    font-size: 12px;
+}
 .attribution {
+    margin-top: .8rem;
+    color: var(--dark-Gray);
     font-size: 11px;
     text-align: center;
 }
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--white);
 }
