@@ -17,7 +17,7 @@ GLOBAL VARIABLES
     --very-dark-gray: hsl(0, 0%, 41%);
 
     --transition: all 0.3s;
-    --desktop-width: min(85vw, 1440px);
+    --desktop-width: min(80vw, 1440px);
     --gen-pad-mobile: 0 min(5vw, 25px);
     --gen-pad-desktop: 0; /** may not use */
 }
@@ -197,7 +197,7 @@ h2 {
 .images-container span {
     display: block;
     position: absolute;
-    left: min(6%, 20px); 
+    left: min(6%, 20px);
     bottom: min(11%, 20px);
     font-size: clamp(1rem, 1rem + 1vw, 1.3rem);
     font-family: var(--ff-secondary);
@@ -221,20 +221,18 @@ h2 {
     background: none;
     transition: var(--transition);
 }
+.creations button:hover {
+    color: var(--white);
+    background: var(--black);
+}
 footer {
     margin-top: 4rem;
     background: var(--black);
 }
-
 .footer-logo {
     display: block;
     padding-top: 3rem;
     margin: 0 auto;
-}
-.creations button:hover {
-    /* cursor: pointer; */
-    color: var(--white);
-    background: var(--black);
 }
 .f-nav-links li {
     padding: 0.5rem 0;
@@ -258,19 +256,21 @@ footer {
     width: min(50%, 300px);
     margin: 1.5rem auto 0 auto;
 }
-.social-media-icons img {
-    width: 18px;
+.social-media-icons i {
+    font-size: 18px;
+    color: var(--white);
 }
 footer p {
     margin-top: 1rem;
     text-align: center;
     color: var(--dark-Gray);
-    font-size: clamp(12px, 11px + 0.5vw, 14px);
+    font-size: clamp(11px, 11px + 0.2vw, 13px);
 }
 .attribution {
     margin-top: 0.8rem;
+    padding-bottom: 1.5rem;
     color: var(--dark-Gray);
-    font-size: clamp(11px, 10px + 0.5vw, 13px);
+    font-size: clamp(11px, 10px + 0.5vw, 12px);
     text-align: center;
 }
 .attribution a {
@@ -319,39 +319,41 @@ footer p {
     /* I think 992 is too far - content's gonna stretch too much */
     /* todo: REMEMBER TO SWAP ALL IMAGES TO
      todo: DESKTOP VERSION */
-    .no-scroll{
+    .no-scroll {
         overflow-y: scroll;
     }
-    .main-header{
+    .main-header {
         background: url("./images/desktop/image-hero.jpg") center / cover no-repeat;
+        height: auto;
     }
-     .nav-logo{
-         width: max(15vw, 180px); 
-     }
+    .nav-logo,
+    .footer-logo {
+        width: max(15vw, 180px);
+    }
     .nav-toggle:hover {
         cursor: pointer;
     }
-    .nav-header{
+    .nav-header {
         position: static !important;
     }
-    .nav-content{
+    .nav-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: var(--desktop-width);
         margin: 1rem auto 0 auto;
     }
-    .nav-toggle{
+    .nav-toggle {
         display: none;
     }
-    .nav-links-container{
+    .nav-links-container {
         position: static !important;
         height: auto !important;
         opacity: 1;
         background: transparent;
         width: auto;
     }
-    .nav-links{
+    .nav-links {
         position: static;
         display: flex;
         margin: 0;
@@ -361,8 +363,237 @@ footer p {
     }
     .nav-links li a {
         font-family: var(--ff-primary);
-        font-size: clamp(.9rem, .9rem + .5vw, 1.25rem);
+        font-size: clamp(0.8rem, 0.8rem + 0.2vw, 1.1rem);
         text-transform: capitalize;
         margin: 0 1rem;
     }
+    .banner {
+        width: var(--desktop-width);
+        margin: 0 auto;
+        justify-content: start;
+    }
+    .banner-text-wrapper {
+        margin: 0;
+    }
+    .about {
+        margin: 6rem auto 0 auto;
+        width: var(--desktop-width);
+        padding: 0;
+        position: relative;
+        border: 1px solid;
+    }
+    .about-img {
+        background: url("./images/desktop/image-interactive.jpg") center / cover no-repeat;
+        width: 65vw;
+        max-width: calc(var(--desktop-width) - 100px);
+        max-height: 500px;
+    }
+    .about .text-content {
+        position: absolute;
+        bottom: 0;
+        left: 61%;
+        width: 32vw;
+        padding: 4.3rem 0 0 4.3rem;
+        background: var(--white);
+    }
+    .about .text-content :is(h2, p) {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+    .about .text-content h2 {
+        max-width: 15ch;
+        font-size: clamp(1.65rem, 1.65rem + 0.05vw, 1.95rem);
+    }
+    .about .text-content p {
+        margin-top: 1rem;
+        max-width: 90ch;
+        font-size: clamp(0.8125rem, 0.7rem + 0.1vw, 0.8rem);
+    }
+    .creations {
+        width: var(--desktop-width);
+        margin: 8rem auto 0 auto;
+        padding: 0;
+        position: relative;
+    }
+    .creations h2 {
+        text-align: left;
+        font-size: clamp(1.5rem, 1.5rem + .5vw, 2.3rem);
+    }
+    .creations button {
+        position: absolute;
+        top: -3.5%;
+        right: 0;
+    }
+    .creations button:hover {
+        cursor: pointer;
+    }
+    .creations button:active {
+        background: transparent;
+        color: var(--black);
+    }
+    .images-container {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .images-container div {
+        margin: 0;
+        height: calc(200px + 15vw);
+        max-height: 520px;
+        width: calc(var(--desktop-width) / 4 - 12.5px);
+        transition: var(--transition);
+        position: relative;
+    }
+    .images-container div::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: 1;
+    }
+    .images-container div:hover {
+        cursor: pointer;
+    }
+    .images-container div:hover::before {
+        opacity: 0.6;
+    }
+    .images-container div:hover span {
+        color: var(--black);
+        z-index: 2;
+    }
+    .images-container div:first-child {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-deep-earth.jpg") center / cover no-repeat;
+    }
+    .images-container div:nth-child(2) {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-night-arcade.jpg") center / cover no-repeat;
+    }
+    .images-container div:nth-child(3) {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-soccer-team.jpg") center / cover no-repeat;
+    }
+    .images-container div:nth-child(4) {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-grid.jpg") center / cover no-repeat;
+    }
+    .images-container div:nth-child(5) {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-from-above.jpg") center / cover no-repeat;
+    }
+    .images-container div:nth-child(6) {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-pocket-borealis.jpg") center / cover no-repeat;
+    }
+    .images-container div:nth-child(7) {
+        background: linear-gradient(to top, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-curiosity.jpg") center / cover no-repeat;
+    }
+    .images-container div:last-child {
+        background: linear-gradient(to right, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0)), url("./images/desktop/image-fisheye.jpg") center / cover no-repeat;
+    }
+    footer .content {
+        width: var(--desktop-width);
+        margin: 10rem auto 0 auto;
+        display: grid;
+        grid-template-areas:
+            "f-logo social-icons"
+            "f-nav copyright"
+            "attribution attribution";
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    footer .content * {
+        margin: 0;
+        padding: 0;
+    }
+    footer .content img {
+        grid-area: f-logo;
+    }
+    .social-media-icons {
+        grid-area: social-icons;
+        justify-self: end;
+        justify-content: space-between;
+        max-width: 120px;
+    }
+    .social-media-icons span:hover {
+        cursor: pointer;
+    }
+    .f-nav-links,
+    footer .content p {
+        margin-top: 1.5rem;
+    }
+    .f-nav-links {
+        grid-area: f-nav;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        max-width: 400px;
+    }
+    .f-nav-links li,
+    .f-nav-links li:first-child,
+    .f-nav-links li:last-child {
+        /* to increase specificity */
+        padding: 0;
+        margin: 0;
+        align-self: flex-end;
+    }
+    .f-nav-links li a {
+        text-align: left;
+    }
+    footer .content p {
+        grid-area: copyright;
+        text-align: right;
+    }
+    div.attribution {
+        grid-area: attribution;
+        margin-top: 2.5rem;
+    }
+    /* Hover states -----------*/
+    .nav-links li a,
+    .f-nav-links li a,
+    .social-media-icons span,
+    .attribution a {
+        position: relative;
+    }
+    .nav-links li a::before,
+    .f-nav-links li a::before,
+    .social-media-icons span::before,
+    .attribution a::before,
+    .nav-links li a::after,
+    .f-nav-links li a::after,
+    .social-media-icons span::after,
+    .attribution a::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 0;
+        transition: var(--transition);
+    }
+    .nav-links li a::before,
+    .f-nav-links li a::before,
+    .attribution a::before,
+    .nav-links li a::after,
+    .f-nav-links li a::after,
+    .attribution a::after {
+        top: 140%;
+    }
+    .nav-links li a:hover::before,
+    .f-nav-links li a:hover::before,
+    .social-media-icons span:hover::before,
+    .attribution a:hover::before,
+    .nav-links li a:hover::after,
+    .f-nav-links li a:hover::after,
+    .social-media-icons span:hover::after,
+    .attribution a:hover::after {
+        width: 50%;
+        background: var(--white);
+    }
+    .social-media-icons span:hover::after {
+        width: 100%;
+    }
+    /* End Hover state ------*/
 }
