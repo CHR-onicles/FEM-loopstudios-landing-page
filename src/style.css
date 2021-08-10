@@ -17,9 +17,9 @@ GLOBAL VARIABLES
     --very-dark-gray: hsl(0, 0%, 41%);
 
     --transition: all 0.3s;
-    --max-width: 1440px;
+    --desktop-width: min(85vw, 1440px);
     --gen-pad-mobile: 0 min(5vw, 25px);
-    --gen-pad-desktop: 0;
+    --gen-pad-desktop: 0; /** may not use */
 }
 *,
 *::before,
@@ -315,8 +315,54 @@ footer p {
         font-size: clamp(1.9rem, 2rem + 7vh, 2.5rem);
     }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 900px) {
+    /* I think 992 is too far - content's gonna stretch too much */
+    /* todo: REMEMBER TO SWAP ALL IMAGES TO
+     todo: DESKTOP VERSION */
+    .no-scroll{
+        overflow-y: scroll;
+    }
+    .main-header{
+        background: url("./images/desktop/image-hero.jpg") center / cover no-repeat;
+    }
+     .nav-logo{
+         width: max(15vw, 180px); 
+     }
     .nav-toggle:hover {
         cursor: pointer;
+    }
+    .nav-header{
+        position: static !important;
+    }
+    .nav-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--desktop-width);
+        margin: 1rem auto 0 auto;
+    }
+    .nav-toggle{
+        display: none;
+    }
+    .nav-links-container{
+        position: static !important;
+        height: auto !important;
+        opacity: 1;
+        background: transparent;
+        width: auto;
+    }
+    .nav-links{
+        position: static;
+        display: flex;
+        margin: 0;
+    }
+    .nav-links li {
+        padding: 0;
+    }
+    .nav-links li a {
+        font-family: var(--ff-primary);
+        font-size: clamp(.9rem, .9rem + .5vw, 1.25rem);
+        text-transform: capitalize;
+        margin: 0 1rem;
     }
 }
