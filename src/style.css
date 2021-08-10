@@ -103,7 +103,9 @@ h2 {
     opacity: 1;
 }
 .nav-links {
-    margin-top: 50%;
+    position: absolute;
+    top: 0; /* overridden in JS */
+    left: 0;
 }
 .nav-links li {
     list-style-type: none;
@@ -278,16 +280,22 @@ footer p {
     color: var(--white);
 }
 @media screen and (min-width: 568px) and (min-height: 320px) {
-    /* small screen landscape mode */
+    /*starting from small screen landscape mode */
     .nav-links {
-        margin-top: 15%;
+        margin-top: min(5vw, 30px);
+    }
+    .nav-links li {
+        padding: 0.5rem 0 .5rem 1.5rem;
     }
     .nav-links li a {
         font-size: clamp(0.8rem, 0.8rem + 0.5vw, 1.2rem);
     }
 }
 @media screen and (min-width: 768px) {
-    .nav-links {
-        margin-top: 30%;
+    .nav-links li {
+        padding: calc(0.7rem + 1vh) 0 calc(0.7rem + 1vh) 1.5rem;
+    }
+    .nav-links li a{
+        font-size: clamp(1.2rem, 1.1rem + 1vw, 1.4rem);
     }
 }
