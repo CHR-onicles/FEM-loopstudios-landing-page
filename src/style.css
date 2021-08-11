@@ -544,6 +544,8 @@ footer p {
         display: flex;
         justify-content: space-between;
         list-style-type: none;
+        min-width: 280px;
+        width: 25vw;
         max-width: 400px;
     }
     .f-nav-links li,
