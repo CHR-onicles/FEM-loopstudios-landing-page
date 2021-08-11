@@ -145,9 +145,10 @@ h2 {
 }
 .about .text-content h2,
 .creations h2 {
-    margin-top: 2rem;
+    margin: 2rem auto 0 auto;
     color: var(--black);
     font-size: clamp(1.5rem, 1.4rem + 1vw, 1.7rem);
+    max-width: 14ch;
     text-align: center;
 }
 .about .text-content p {
@@ -315,10 +316,7 @@ footer p {
         font-size: clamp(1.9rem, 2rem + 7vh, 2.5rem);
     }
 }
-@media screen and (min-width: 900px) {
-    /* I think 992 is too far - content's gonna stretch too much */
-    /* todo: REMEMBER TO SWAP ALL IMAGES TO
-     todo: DESKTOP VERSION */
+@media screen and (min-width: 950px) {
     .no-scroll {
         overflow-y: scroll;
     }
@@ -380,19 +378,20 @@ footer p {
         width: var(--desktop-width);
         padding: 0;
         position: relative;
-        border: 1px solid;
     }
     .about-img {
         background: url("./images/desktop/image-interactive.jpg") center / cover no-repeat;
         width: 65vw;
-        max-width: calc(var(--desktop-width) - 100px);
-        max-height: 500px;
+        max-width: calc(var(--desktop-width) - 200px);
+        max-height: 550px;
+        transition: var(--transition);
     }
     .about .text-content {
         position: absolute;
         bottom: 0;
-        left: 61%;
-        width: 32vw;
+        left: 62%;
+        width: 30.5vw;
+        max-width:450px;
         padding: 4.3rem 0 0 4.3rem;
         background: var(--white);
     }
@@ -403,7 +402,8 @@ footer p {
     }
     .about .text-content h2 {
         max-width: 15ch;
-        font-size: clamp(1.65rem, 1.65rem + 0.05vw, 1.95rem);
+        font-size: clamp(1.65rem, 1.65rem + 0.06vw, 1.95rem);
+        transition: var(--transition);
     }
     .about .text-content p {
         margin-top: 1rem;
@@ -419,6 +419,7 @@ footer p {
     .creations h2 {
         text-align: left;
         font-size: clamp(1.5rem, 1.5rem + .5vw, 2.3rem);
+        transition: var(--transition);
     }
     .creations button {
         position: absolute;
@@ -436,13 +437,13 @@ footer p {
         margin-top: 3rem;
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 1.5rem;
     }
     .images-container div {
         margin: 0;
         height: calc(200px + 15vw);
         max-height: 520px;
-        width: calc(var(--desktop-width) / 4 - 12.5px);
+        width: calc(var(--desktop-width) / 4 - 19px);
         transition: var(--transition);
         position: relative;
     }
@@ -463,6 +464,11 @@ footer p {
     }
     .images-container div:hover::before {
         opacity: 0.6;
+    }
+    .images-container span {
+        left: 14%;
+        bottom: 8%;
+        font-size: clamp(1.6rem, 1.6rem + .5vw, 1.8rem);
     }
     .images-container div:hover span {
         color: var(--black);
@@ -596,4 +602,29 @@ footer p {
         width: 100%;
     }
     /* End Hover state ------*/
+}
+@media screen and (min-width: 1100px) {
+    .about-img{
+        max-width: calc(var(--desktop-width) - 250px);
+    }
+    .about .text-content h2 {
+        font-size: clamp(1.9rem, 1.9rem + .25vw, 2.85rem);
+    }
+}
+@media screen and (min-width: 1440px) {
+    .about .text-content h2 {
+        font-size: clamp(2.6rem, 2.6rem + .1vw, 2.85rem);
+    }
+    .creations h2 {
+        font-size: 2.45rem;
+    }
+}
+@media screen and (min-width: 1700px) {
+    .about-img{
+        max-height: 700px;
+        max-width: calc(var(--desktop-width) - 200px);
+    }
+    .about .text-content {
+        left: calc(62% + 4.1vw);
+    }
 }
