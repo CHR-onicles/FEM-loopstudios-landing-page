@@ -26,7 +26,7 @@ Users should be able to:
 ### Demo
 
 <img src="./demo/mobile.gif" alt="Mobile view">
-<img src="" width=800 alt="Desktop view">
+<img src="./demo/desktop.gif" width=800 alt="Desktop view">
 
 
 ### Links
