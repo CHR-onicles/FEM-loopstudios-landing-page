@@ -32,6 +32,13 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--ff-size);
     line-height: 1.5em;
+    overflow: overlay;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 0%, .8);
 }
 a {
     text-decoration: none;
@@ -417,6 +424,9 @@ footer p {
         position: relative;
     }
     .creations h2 {
+        max-width: max-content;
+        margin: 0;
+        margin-right: auto;
         text-align: left;
         font-size: clamp(1.5rem, 1.5rem + .5vw, 2.3rem);
         transition: var(--transition);
