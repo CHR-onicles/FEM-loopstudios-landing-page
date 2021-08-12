@@ -319,6 +319,19 @@ footer p {
     .nav-links li a {
         font-size: clamp(1.2rem, 1.1rem + 1vw, 1.4rem);
     }
+    .about {
+        display: flex;
+    }
+    .about-img {
+        background: url("./images/desktop/image-interactive.jpg") center /cover no-repeat;
+        width: 60%;
+    }
+    .about .text-content{
+        margin: auto 0;
+    }
+    .about .text-content h2 {
+        margin-top: 0;
+    }
 }
 @media screen and (min-width: 768px) and (max-height: 500px) {
     /* long phones in landscape mode */
