@@ -287,7 +287,7 @@ footer p {
 .attribution a {
     color: var(--white);
 }
-@media screen and (min-width: 568px) and (min-height: 320px) {
+@media screen and (min-width: 35.5em) and (min-height: 20em) {
     /*starting from small screen landscape mode */
     .nav-links {
         margin-top: min(5vw, 30px);
@@ -309,7 +309,7 @@ footer p {
         font-size: clamp(1.1rem, 1rem + 4vw, 1.6rem);
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
     h1 {
         font-size: clamp(2.5rem, 2.5rem + 4vw, 3.5rem);
     }
@@ -333,13 +333,13 @@ footer p {
         margin-top: 0;
     }
 }
-@media screen and (min-width: 768px) and (max-height: 500px) {
+@media screen and (min-width: 48em) and (max-height: 31.25em) {
     /* long phones in landscape mode */
     h1 {
         font-size: clamp(1.9rem, 2rem + 7vh, 2.5rem);
     }
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 59.375em) {
     .no-scroll {
         overflow-y: scroll;
     }
@@ -631,7 +631,7 @@ footer p {
     }
     /* End Hover state ------*/
 }
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 68.75em) {
     .about-img{
         max-width: calc(var(--desktop-width) - 250px);
     }
@@ -639,7 +639,7 @@ footer p {
         font-size: clamp(1.9rem, 1.9rem + .25vw, 2.85rem);
     }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 90em) {
     .about .text-content h2 {
         font-size: clamp(2.6rem, 2.6rem + .1vw, 2.85rem);
     }
@@ -647,7 +647,7 @@ footer p {
         font-size: 2.45rem;
     }
 }
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 106.25em) {
     .about-img{
         max-height: 700px;
         max-width: calc(var(--desktop-width) - 200px);
